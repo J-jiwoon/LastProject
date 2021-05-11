@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/account"
+            android:icon="@drawable/ic_person"
+            android:title="내 정보"/>
+       <item
+            android:id="@+id/foodmenu"
+            android:icon="@drawable/ic_food"
+            android:title="식품 관리"/>
+        <item
+            android:id="@+id/dietmenu"
+            android:icon="@drawable/ic_diet"
+            android:title="식단 관리"/>
+        <item
+            android:id="@+id/gamemenu"
+            android:icon="@drawable/ic_game"
+            android:title="게임"/>
+        <item
+            android:id="@+id/firemenu"
+            android:icon="@drawable/ic_fire"
+            android:title="화재 경고 설정"/>
+        <item
+            android:id="@+id/settingmenu"
+            android:icon="@drawable/ic_settings"
+            android:title="환경설정"/>
+        //테스트용 로그인 화면으로 전환
+        <item
+            android:id="@+id/logingmenu"
+            android:icon="@drawable/ic_settings"
+            android:title="로그인(test)"/>
+    </group>
+</menu>
