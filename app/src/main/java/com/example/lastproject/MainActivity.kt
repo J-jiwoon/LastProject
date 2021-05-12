@@ -49,7 +49,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 Toast.makeText(applicationContext, "식단 관리", Toast.LENGTH_SHORT).show()
             }
             R.id.gamemenu->{ // 게임 버튼
-                Toast.makeText(applicationContext, "게임", Toast.LENGTH_SHORT).show()
+                var game = Intent(applicationContext, Game::class.java)
+                startActivity(game)
             }
             R.id.firemenu->{ // 화재 경고 설정 버튼
                 var fireset = Intent(applicationContext, Firesetting::class.java)
