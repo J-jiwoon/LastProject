@@ -25,7 +25,7 @@ class Game : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListene
 
         naviView.setNavigationItemSelectedListener(this)
 
-        imagemove(hchar, 600f,  2500L)
+        imagemove(hchar, 600f, 2500L)
 
     }
 

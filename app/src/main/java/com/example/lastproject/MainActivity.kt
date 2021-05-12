@@ -37,6 +37,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {    //네비게이션 메뉴 아이템 클릭 시 수행
+
         when(item.itemId){
             R.id.account->{ // 내 정보 버튼
                 var account = Intent(applicationContext, Account::class.java) // 네비게이션 드로어 열기
