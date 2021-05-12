@@ -8,10 +8,12 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.PersistableBundle
 import android.view.MenuItem
+import android.view.View
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.core.view.GravityCompat
 import com.google.android.material.navigation.NavigationView
+import kotlinx.android.synthetic.main.activity_firesetting.*
 import kotlinx.android.synthetic.main.activity_game.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.layout_drawer
@@ -25,25 +27,22 @@ class Game : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListene
 
         naviView.setNavigationItemSelectedListener(this)
 
-        imagemove(hchar, 600f, 2500L)
-
-    }
-
-    var handler:Handler = Handler()
-    var runnable : Runnable = Runnable {  }
-
-    fun imagemove(image1:ImageView, posix:Float, duration1: Long){
-
-        runnable = object : Runnable {
-            override fun run() {
-                ObjectAnimator.ofFloat(image1, "translationX", posix).apply {
-                    duration = duration1
-                    start()
-                }
-                handler.postDelayed(runnable, duration1)
+         var kcal = 500
+            if(kcal >= 1200){
+                fatchar.setVisibility(View.VISIBLE)
+                fatchar.playAnimation()
             }
-        }
-        handler.post(runnable)
+            else if((kcal < 1200 ) && (kcal >= 600)){
+                healthychar.setVisibility(View.VISIBLE)
+                healthychar.playAnimation()
+            }
+            else if(kcal < 600){
+                hungrychar.setVisibility(View.VISIBLE)
+                hungrychar.playAnimation()
+            }
+
+
+
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {    //네비게이션 메뉴 아이템 클릭 시 수행

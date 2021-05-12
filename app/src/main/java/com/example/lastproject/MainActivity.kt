@@ -100,11 +100,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         xvalues.add(Strnow)
 
         //데이터 삽입
-        val yaxis = arrayOf<Float>(4f, 5.7f, 8.4f, 1.9f, 4.3f)
+        val ykcal = arrayOf<Float>(4f, 5.7f, 8.4f, 1.9f, 4.3f)
         val barentries = ArrayList<BarEntry>()
 
-        for(i in 0..yaxis.size-1){
-            barentries.add(BarEntry(yaxis[i], i))
+        for(i in 0..ykcal.size-1){
+            barentries.add(BarEntry(ykcal[i], i))
         }
 
         //데이터 적용용
