@@ -25,24 +25,54 @@ class Game : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListene
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
 
+        btn_navigame.setOnClickListener {
+            layout_drawer.openDrawer(GravityCompat.END) //네비게이션 출력 방향
+        }
         naviView.setNavigationItemSelectedListener(this)
 
-         var kcal = 500
+        testbtn.setOnClickListener {
+            var kcal = Integer.parseInt(testkcal.getText().toString())
+
             if(kcal >= 1200){
+                healthychar.setVisibility(View.INVISIBLE)
                 fatchar.setVisibility(View.VISIBLE)
+                hungrychar.setVisibility(View.INVISIBLE)
                 fatchar.playAnimation()
             }
             else if((kcal < 1200 ) && (kcal >= 600)){
                 healthychar.setVisibility(View.VISIBLE)
+                fatchar.setVisibility(View.INVISIBLE)
+                hungrychar.setVisibility(View.INVISIBLE)
                 healthychar.playAnimation()
             }
             else if(kcal < 600){
+                healthychar.setVisibility(View.INVISIBLE)
+                fatchar.setVisibility(View.INVISIBLE)
                 hungrychar.setVisibility(View.VISIBLE)
                 hungrychar.playAnimation()
             }
+        }
 
+        fatchar.setOnClickListener{
+            fatText.setVisibility(View.VISIBLE)
+            Handler().postDelayed({
+                fatText.setVisibility(View.INVISIBLE)
+            }, 3000L)
+        }
 
+        healthychar.setOnClickListener{
+            healthText.setVisibility(View.VISIBLE)
+            Handler().postDelayed({
+                healthText.setVisibility(View.INVISIBLE)
+            }, 3000L)
+        }
 
+        hungrychar.setOnClickListener{
+            hungryText.setVisibility(View.VISIBLE)
+            Handler().postDelayed({
+                hungryText.setVisibility(View.INVISIBLE)
+            }, 3000L)
+        }
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {    //네비게이션 메뉴 아이템 클릭 시 수행
@@ -58,7 +88,8 @@ class Game : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListene
                 Toast.makeText(applicationContext, "식단 관리", Toast.LENGTH_SHORT).show()
             }
             R.id.gamemenu->{ // 게임 버튼
-                Toast.makeText(applicationContext, "게임", Toast.LENGTH_SHORT).show()
+                var game = Intent(applicationContext, Game::class.java)
+                startActivity(game)
             }
             R.id.firemenu->{ // 화재 경고 설정 버튼
                 var fireset = Intent(applicationContext, Firesetting::class.java)

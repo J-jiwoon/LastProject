@@ -13,7 +13,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.core.view.GravityCompat
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_firesetting.*
-import kotlinx.android.synthetic.main.activity_firesetting.btn_navi
+import kotlinx.android.synthetic.main.activity_firesetting.btn_navifire
 import kotlinx.android.synthetic.main.activity_firesetting.layout_drawer
 import kotlinx.android.synthetic.main.activity_firesetting.naviView
 import kotlinx.android.synthetic.main.activity_main.*
@@ -23,7 +23,7 @@ class Firesetting : AppCompatActivity(), NavigationView.OnNavigationItemSelected
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_firesetting)
 
-        btn_navi.setOnClickListener {
+        btn_navifire.setOnClickListener {
             layout_drawer.openDrawer(GravityCompat.END) //네비게이션 출력 방향
         }
         naviView.setNavigationItemSelectedListener(this) // 네비게이션 메뉴 아이템에 클릭 속성 부여
@@ -84,7 +84,8 @@ class Firesetting : AppCompatActivity(), NavigationView.OnNavigationItemSelected
                 Toast.makeText(applicationContext, "식단 관리", Toast.LENGTH_SHORT).show()
             }
             R.id.gamemenu->{ // 게임 버튼
-                Toast.makeText(applicationContext, "게임", Toast.LENGTH_SHORT).show()
+                var game = Intent(applicationContext, Game::class.java)
+                startActivity(game)
             }
             R.id.firemenu->{ // 화재 경고 설정 버튼
                 var fireset = Intent(applicationContext, Firesetting::class.java)

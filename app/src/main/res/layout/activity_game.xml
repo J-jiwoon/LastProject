@@ -12,16 +12,14 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/btn_navi"
+            android:id="@+id/btn_navigame"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:src="@drawable/ic_menu"
-            android:contentDescription="TODO"/>
-
+            android:src="@drawable/ic_menu"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -39,6 +37,54 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
+                <EditText
+                    android:id="@+id/testkcal"
+                    android:layout_width="200dp"
+                    android:hint="kcal 테스트값 입력"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toStartOf="@+id/testbtn"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/testbtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="test"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/healthText"
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginBottom="200dp"
+                    android:src="@drawable/healthytext"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:visibility="invisible"/>
+                <ImageView
+                    android:id="@+id/fatText"
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginBottom="280dp"
+                    android:src="@drawable/fattext"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:visibility="invisible" />
+                <ImageView
+                    android:id="@+id/hungryText"
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginBottom="200dp"
+                    android:src="@drawable/hungrytext"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:visibility="invisible"/>
 
                 <com.airbnb.lottie.LottieAnimationView
                     android:id="@+id/healthychar"
@@ -85,8 +131,6 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
-
-
     </LinearLayout>
 
     <com.google.android.material.navigation.NavigationView
