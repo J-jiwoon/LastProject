@@ -15,7 +15,7 @@
         <activity android:name=".Firesetting" />
         <activity android:name=".FindPass" />
         <activity android:name=".FindId" />
-        <activity android:name=".Join" />
+        <activity android:name=".RegisterActivity" />
         <activity android:name=".Account" />
         <activity android:name=".Login" />
         <activity android:name=".MainActivity">

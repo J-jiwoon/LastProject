@@ -45,7 +45,8 @@
                     android:layout_height="wrap_content"
                     app:layout_constraintEnd_toStartOf="@+id/testbtn"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:inputType="number"/>
 
                 <Button
                     android:id="@+id/testbtn"

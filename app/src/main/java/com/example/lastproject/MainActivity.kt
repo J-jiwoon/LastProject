@@ -12,7 +12,9 @@ import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet
 import com.google.android.material.navigation.NavigationView
+import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.layout_drawer
 import lecho.lib.hellocharts.model.Axis
 import lecho.lib.hellocharts.model.Column
 import lecho.lib.hellocharts.model.ColumnChartData
