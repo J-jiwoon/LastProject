@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 var game = Intent(applicationContext, Game::class.java)
                 startActivity(game)
             }
-            R.id.firemenu->{ // 화재 경고 설정 버튼
+            R.id.firemenu->{ // 화재 경고 설정 버튼 
                 var fireset = Intent(applicationContext, Firesetting::class.java)
                 startActivity(fireset)
             }
@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
             //테스트 용
             R.id.logingmenu->{ // 로그인(test) 버튼
-                var intent1 = Intent(applicationContext, Login::class.java)
+                var intent1 = Intent(applicationContext, Searchdb::class.java)
                 startActivity(intent1)
             }
         }
