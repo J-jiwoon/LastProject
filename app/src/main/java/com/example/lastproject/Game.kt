@@ -1,24 +1,17 @@
 package com.example.lastproject
 
-import android.animation.ObjectAnimator
-import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import android.os.PersistableBundle
 import android.view.MenuItem
 import android.view.View
-import android.widget.ImageView
 import android.widget.Toast
 import androidx.core.view.GravityCompat
 import com.google.android.material.navigation.NavigationView
-import kotlinx.android.synthetic.main.activity_firesetting.*
 import kotlinx.android.synthetic.main.activity_game.*
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.layout_drawer
 import kotlinx.android.synthetic.main.activity_main.naviView
-import java.time.Duration
 
 class Game : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -100,7 +93,7 @@ class Game : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListene
             }
             //테스트 용
             R.id.logingmenu->{ // 로그인(test) 버튼
-                var intent1 = Intent(applicationContext, Login::class.java)
+                var intent1 = Intent(applicationContext, LoginActivity::class.java)
                 startActivity(intent1)
             }
         }

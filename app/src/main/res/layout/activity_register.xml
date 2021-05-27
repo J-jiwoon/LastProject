@@ -90,7 +90,7 @@
             android:orientation="vertical"
             android:layout_weight="3">
             <EditText
-                android:id="@+id/idedt"
+                android:id="@+id/et_id"
                 android:layout_width="220dp"
                 android:layout_height="30dp"
                 android:background="@drawable/border_layout"
@@ -99,7 +99,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"/>
             <EditText
-                android:id="@+id/passedt"
+                android:id="@+id/et_pass"
                 android:layout_width="220dp"
                 android:layout_height="30dp"
                 android:background="@drawable/border_layout"
@@ -108,7 +108,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="25dp"/>
             <EditText
-                android:id="@+id/passchkedt"
+                android:id="@+id/et_passchk"
                 android:layout_width="220dp"
                 android:layout_height="30dp"
                 android:background="@drawable/border_layout"
@@ -117,7 +117,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="25dp"/>
             <EditText
-                android:id="@+id/nameedt"
+                android:id="@+id/et_name"
                 android:layout_width="220dp"
                 android:layout_height="30dp"
                 android:background="@drawable/border_layout"
@@ -126,7 +126,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="25dp"/>
             <EditText
-                android:id="@+id/phoneedt"
+                android:id="@+id/et_phone"
                 android:layout_width="220dp"
                 android:layout_height="30dp"
                 android:background="@drawable/border_layout"
@@ -135,7 +135,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="25dp"/>
             <EditText
-                android:id="@+id/emailedt"
+                android:id="@+id/et_email"
                 android:layout_width="220dp"
                 android:layout_height="30dp"
                 android:background="@drawable/border_layout"
@@ -158,7 +158,7 @@
         </LinearLayout>
     </LinearLayout>
     <Button
-        android:id="@+id/joinfinbtn"
+        android:id="@+id/btn_register"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:text="가입"

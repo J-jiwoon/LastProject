@@ -45,7 +45,7 @@ class Account : AppCompatActivity(), NavigationView.OnNavigationItemSelectedList
             }
             //테스트 용
             R.id.logingmenu->{ // 로그인(test) 버튼
-                var intent1 = Intent(applicationContext, Login::class.java)
+                var intent1 = Intent(applicationContext, LoginActivity::class.java)
                 startActivity(intent1)
             }
         }

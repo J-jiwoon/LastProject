@@ -5,7 +5,7 @@
     android:id="@+id/layout_drawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login"
+    tools:context=".LoginActivity"
     android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <EditText
-            android:id="@+id/idtext"
+            android:id="@+id/et_id"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
@@ -34,7 +34,7 @@
             android:background="@drawable/border_layout"
             android:hint="ID를 입력하세요" />
         <EditText
-            android:id="@+id/passtext"
+            android:id="@+id/et_pass"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
@@ -42,7 +42,7 @@
             android:background="@drawable/border_layout"
             android:hint="PASSWORD를 입력하세요" />
         <Button
-            android:id="@+id/loginbtn"
+            android:id="@+id/btn_login"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
@@ -65,7 +65,7 @@
         android:layout_weight="1"
         android:orientation="horizontal">
         <Button
-            android:id="@+id/joinbtn"
+            android:id="@+id/btn_register"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -74,7 +74,7 @@
             android:text="회원가입" />
 
         <Button
-            android:id="@+id/findidbtn"
+            android:id="@+id/btn_findid"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
@@ -83,7 +83,7 @@
             android:text="아이디 찾기" />
 
         <Button
-            android:id="@+id/findpassbtn"
+            android:id="@+id/btn_findpass"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"

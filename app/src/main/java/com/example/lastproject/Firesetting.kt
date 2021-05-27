@@ -16,7 +16,6 @@ import kotlinx.android.synthetic.main.activity_firesetting.*
 import kotlinx.android.synthetic.main.activity_firesetting.btn_navifire
 import kotlinx.android.synthetic.main.activity_firesetting.layout_drawer
 import kotlinx.android.synthetic.main.activity_firesetting.naviView
-import kotlinx.android.synthetic.main.activity_main.*
 
 class Firesetting : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -96,7 +95,7 @@ class Firesetting : AppCompatActivity(), NavigationView.OnNavigationItemSelected
             }
             //테스트 용
             R.id.logingmenu->{ // 로그인(test) 버튼
-                var intent1 = Intent(applicationContext, Login::class.java)
+                var intent1 = Intent(applicationContext, LoginActivity::class.java)
                 startActivity(intent1)
             }
         }

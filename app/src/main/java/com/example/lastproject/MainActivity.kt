@@ -29,6 +29,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        var intent = intent
+        var userID = intent.getStringExtra("userID")
+
+        userid.text = userID
+
         btn_navi.setOnClickListener {
             layout_drawer.openDrawer(GravityCompat.END) //네비게이션 출력 방향
         }
@@ -64,7 +69,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
             //테스트 용
             R.id.logingmenu->{ // 로그인(test) 버튼
-                var intent1 = Intent(applicationContext, Searchdb::class.java)
+                var intent1 = Intent(applicationContext, LoginActivity::class.java)
                 startActivity(intent1)
             }
         }
