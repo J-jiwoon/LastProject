@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.telephony.SmsManager
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
@@ -54,7 +55,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 Toast.makeText(applicationContext, "식품 관리", Toast.LENGTH_SHORT).show()
             }
             R.id.dietmenu->{ // 식단 관리 버튼
-                Toast.makeText(applicationContext, "식단 관리", Toast.LENGTH_SHORT).show()
+                var diet = Intent(applicationContext, DietActivity::class.java)
+                startActivity(diet)
             }
             R.id.gamemenu->{ // 게임 버튼
                 var game = Intent(applicationContext, Game::class.java)
