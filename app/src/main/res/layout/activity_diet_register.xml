@@ -8,19 +8,15 @@
     tools:context=".DietRegisterActivity"
     android:orientation="vertical">
 
-    <com.mancj.materialsearchbar.MaterialSearchBar
-        android:id="@+id/searchBar"
+    <EditText
+        android:id="@+id/editSearch"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-
-        app:mt_hint="Custom hint"
-        app:mt_maxSuggestionsCount="5"
-        app:mt_speechMode="true"
-        app:theme="@style/AppTheme.PopupOverlay" />
+        android:layout_height="wrap_content"
+        android:hint="검색어를 입력하세요."/>
 
     <ListView
-        android:id="@+id/mListView"
+        android:id="@+id/dietfdListView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>

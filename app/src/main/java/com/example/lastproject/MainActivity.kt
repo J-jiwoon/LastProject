@@ -31,9 +31,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setContentView(R.layout.activity_main)
 
         var intent = intent
-        var userID = intent.getStringExtra("userID")
+        var userName = intent.getStringExtra("userName")
 
-        userid.text = userID
+        userid.text = userName
 
         btn_navi.setOnClickListener {
             layout_drawer.openDrawer(GravityCompat.END) //네비게이션 출력 방향
