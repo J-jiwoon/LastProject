@@ -1,7 +1,10 @@
 package com.example.lastproject
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
@@ -11,61 +14,34 @@ import lecho.lib.hellocharts.util.ChartUtils
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
-class MainActivity : AppCompatActivity(){
 
-    private lateinit var mainFragment: MainFragment
-    private lateinit var accountFragment: AccountFragment
-    private lateinit var dietRegisterFragment: DietRegisterFragment
-    private lateinit var dietlistFragment: DietListFragment
-    private lateinit var gameFragment: GameFragment
-    private lateinit var settingFragment: SettingFragment
+class MainFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+    }
 
-        var bundle = Bundle()
-        var intent = intent
-        var userName = intent.getStringExtra("userName")
-        var userID = intent.getStringExtra("userID")
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_main, container, false)
+    }
 
-        menu_home.setOnClickListener {
-            mainFragment = MainFragment.newInstance()
-            supportFragmentManager.beginTransaction().replace(R.id.main,mainFragment).commit()
-        }
-
-        menu_account.setOnClickListener{
-            bundle.putString("username", userName)
-            accountFragment = AccountFragment.newInstance()
-            supportFragmentManager.beginTransaction().replace(R.id.main, AccountFragment().apply { arguments = bundle }).commit()
-        }
-
-        menu_diet.setOnClickListener{
-            bundle.putString("userID", userID)
-            dietRegisterFragment = DietRegisterFragment.newInstance()
-            supportFragmentManager.beginTransaction().replace(R.id.main, DietRegisterFragment().apply { arguments = bundle }).commit()
-        }
-
-        menu_dietlist.setOnClickListener{
-            bundle.putString("userID", userID)
-            dietlistFragment = DietListFragment.newInstance()
-            supportFragmentManager.beginTransaction().replace(R.id.main, DietListFragment().apply { arguments = bundle }).commit()
-        }
-
-        menu_game.setOnClickListener {
-            gameFragment = GameFragment.newInstance()
-            supportFragmentManager.beginTransaction().replace(R.id.main, gameFragment).commit()
-        }
-
-        menu_setting.setOnClickListener {
-            settingFragment = SettingFragment.newInstance()
-            supportFragmentManager.beginTransaction().replace(R.id.main, settingFragment).commit()
-        }
-
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         setDayKcalChartValues()
         setNutrientChartValues()
     }
 
+    companion object{
+        const val TAG : String = "메인로그"
+
+        fun newInstance(): MainFragment {
+            return MainFragment()
+        }
+    }
 
     fun setDayKcalChartValues(){
         val xvalues = ArrayList<String>()

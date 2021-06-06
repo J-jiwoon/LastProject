@@ -1,97 +1,228 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layout_drawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <ImageView
-            android:id="@+id/btn_navi"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:src="@drawable/ic_menu" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    tools:context=".MainActivity"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#DFD3F4">
+
         <LinearLayout
-            android:layout_width="match_parent"
+            android:id="@+id/menu_home"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp">
             <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="52dp"
-                android:layout_height="53dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="60dp"
-                app:srcCompat="@drawable/ic_person" />
-            <TextView
-                android:id="@+id/userid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="72dp"
-                android:text="USERNAME"
-                android:textSize="25sp"
-                android:textStyle="bold" />
+                android:src="@drawable/ic_home"
+                android:layout_gravity="center"/>
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="홈"
+                android:layout_gravity="center"
+                android:gravity="center"/>
         </LinearLayout>
+
         <LinearLayout
-            android:layout_width="match_parent"
+            android:id="@+id/menu_account"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_weight="1">
-            <TextView
-                android:layout_width="150dp"
+            android:layout_weight="1"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp">
+            <ImageView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="일일 섭취칼로리"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:layout_gravity="right"
-                android:gravity="center"
-                android:layout_marginRight="10dp"/>
-            <com.github.mikephil.charting.charts.BarChart
-                android:id="@+id/kcalchart"
-                android:layout_width="match_parent"
-                android:layout_height="250dp"/>
+                android:src="@drawable/ic_person"
+                android:layout_gravity="center"/>
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="내 정보"
+                android:layout_gravity="center"
+                android:gravity="center"/>
         </LinearLayout>
+
         <LinearLayout
-            android:layout_width="match_parent"
+            android:id="@+id/menu_food"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_weight="1">
-            <TextView
-                android:layout_width="170dp"
+            android:layout_weight="1"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp">
+            <ImageView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="일일 섭취영양성분"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:layout_gravity="right"
-                android:gravity="center"
-                android:layout_marginRight="10dp"/>
-            <com.github.mikephil.charting.charts.BarChart
-                android:id="@+id/daychart"
-                android:layout_width="match_parent"
-                android:layout_height="250dp"/>
+                android:src="@drawable/ic_food"
+                android:layout_gravity="center"/>
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="식품 관리"
+                android:layout_gravity="center"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menu_diet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_diet"
+                android:layout_gravity="center"/>
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="식단 관리"
+                android:layout_gravity="center"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menu_dietlist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_dietlist"
+                android:layout_gravity="center"/>
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="식단 등록"
+                android:layout_gravity="center"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menu_game"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_game"
+                android:layout_gravity="center"/>
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="게임"
+                android:layout_gravity="center"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menu_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_settings"
+                android:layout_gravity="center"/>
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="환경설정"
+                android:layout_gravity="center"
+                android:gravity="center"/>
         </LinearLayout>
     </LinearLayout>
 
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/naviView"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="end"
-        app:menu="@menu/navi_menu"/>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-</androidx.drawerlayout.widget.DrawerLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/main">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="일일 섭취칼로리"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:layout_gravity="right"
+                    android:gravity="center"
+                    android:layout_marginRight="10dp"/>
+                <com.github.mikephil.charting.charts.BarChart
+                    android:id="@+id/kcalchart"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:text="일일 섭취영양성분"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:layout_gravity="right"
+                    android:gravity="center"
+                    android:layout_marginRight="10dp"/>
+                <com.github.mikephil.charting.charts.BarChart
+                    android:id="@+id/daychart"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/fragment">
+
+        </RelativeLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

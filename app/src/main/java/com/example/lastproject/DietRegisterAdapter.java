@@ -7,6 +7,8 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.fragment.app.Fragment;
+
 import org.w3c.dom.Text;
 
 import java.util.List;
@@ -38,6 +40,7 @@ public class DietRegisterAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View convertView, ViewGroup viewGroup) {
+
         View v = View.inflate(context, R.layout.diet_register_item, null);
         TextView foodname = (TextView) v.findViewById(R.id.foodname);
         TextView foodkcal = (TextView) v.findViewById(R.id.foodkcal);
@@ -50,6 +53,7 @@ public class DietRegisterAdapter extends BaseAdapter {
         carbo.setText(registerlistView.get(i).getCarbo());
         protein.setText(registerlistView.get(i).getProtein());
         fat.setText(registerlistView.get(i).getFat());
+
 
         v.setTag(registerlistView.get(i).getFoodname());
 

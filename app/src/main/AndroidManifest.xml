@@ -13,23 +13,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:usesCleartextTraffic="true" >
-        <activity android:name=".DietRegisterActivity" >
-        </activity>
         <activity android:name=".DietDetailActivity" />
         <activity android:name=".Game" />
         <activity android:name=".Firesetting" />
         <activity android:name=".FindPass" />
         <activity android:name=".FindId" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".DietActivity" />
         <activity android:name=".Account" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".MainActivity" >
+        <activity android:name=".LoginActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity" >
+
         </activity>
     </application>
 

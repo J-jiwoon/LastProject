@@ -7,14 +7,15 @@ public class DietrfList {
     String carbo;
     String protein;
     String fat;
+    String userID;
 
-
-    public DietrfList(String foodname, String foodkcal, String carbo, String protein, String fat) {
+    public DietrfList(String foodname, String foodkcal, String carbo, String protein, String fat, String userID) {
         this.foodname = foodname;
         this.foodkcal = foodkcal;
         this.carbo = carbo;
         this.protein = protein;
         this.fat = fat;
+        this.userID = userID;
     }
 
     public String getFoodname() {
@@ -55,5 +56,13 @@ public class DietrfList {
 
     public void setFat(String fat) {
         this.fat = fat;
+    }
+
+    public String getUserID() {
+        return userID;
+    }
+
+    public void setUserID(String userID) {
+        this.userID = userID;
     }
 }

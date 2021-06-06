@@ -13,7 +13,7 @@ public class AddRequest extends StringRequest {
     final static private String URL = "http://122.39.240.72/DietRegister.php";
     private Map<String, String> parameters;
 
-    public AddRequest(String foodname, String foodkcal, String carbo, String protein, String fat, Response.Listener<String> listener) {
+    public AddRequest(String foodname, String foodkcal, String carbo, String protein, String fat, String userID, Response.Listener<String> listener) {
         super(Method.POST, URL, listener, null);
         parameters = new HashMap<>();
         parameters.put("foodname", foodname);
@@ -21,6 +21,7 @@ public class AddRequest extends StringRequest {
         parameters.put("carbo", carbo);
         parameters.put("protein", protein);
         parameters.put("fat", fat);
+        parameters.put("userID", userID);
     }
 
     @Override

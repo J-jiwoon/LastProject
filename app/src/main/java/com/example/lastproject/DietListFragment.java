@@ -1,21 +1,15 @@
 package com.example.lastproject;
 
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
+import androidx.fragment.app.Fragment;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
+import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -24,51 +18,71 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
-public class DietActivity extends AppCompatActivity {
+public class DietListFragment extends Fragment {
 
-    private ListView registerlistView;          // 검색을 보여줄 리스트변수
-    private DietRegisterAdapter rgadapter;
+    private EditText editSearch;        // 검색어를 입력할 Input 창
+
+    private ListView dietfdListView;          // 검색을 보여줄 리스트변수
+    private DietListAdapter fdadapter;
+    private List<DietfdList> dietfdList;          // 데이터를 넣은 리스트변수
+    private List<DietfdList> searchfdList;  // 검색을 위한 리스트변수
+
     private List<DietrfList> dietrfList;          // 데이터를 넣은 리스트변수
-    private Button btn_dietregister;
+
+    public static String userID;
+
+    public DietListFragment() {
+        // Required empty public constructor
+    }
+
+    public static DietListFragment newInstance() {
+        DietListFragment fragment = new DietListFragment();
+        Bundle args = new Bundle();
+        fragment.setArguments(args);
+        return fragment;
+    }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_diet);
+    }
 
+    @Override
+    public void onActivityCreated(Bundle b) {
 
-        btn_dietregister = findViewById(R.id.btn_dietregister);
+        super.onActivityCreated(b);
+        dietfdListView = (ListView) getView().findViewById(R.id.dietfdListView);
+        dietfdList = new ArrayList<DietfdList>();
+        searchfdList = new ArrayList<DietfdList>();
 
-        registerlistView = (ListView) findViewById(R.id.registerlistView);
         dietrfList = new ArrayList<DietrfList>();
 
 
-        rgadapter = new DietRegisterAdapter(getApplicationContext(), dietrfList);
-        registerlistView.setAdapter(rgadapter);
+        userID = (String) getArguments().get("userID");
+
+        fdadapter = new DietListAdapter(getActivity(), dietfdList, searchfdList, dietrfList, this);
+        dietfdListView.setAdapter(fdadapter);
 
         new BackgroundTask().execute();
-
-        btn_dietregister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent( DietActivity.this, DietRegisterActivity.class );
-                startActivity(intent);
-            }
-        });
-
-
     }
 
-    class BackgroundTask extends AsyncTask<Void, Void, String>{
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_diet_list, container, false);
+    }
+
+    class BackgroundTask extends AsyncTask<Void, Void, String> {
 
         String target;
 
         @Override
         protected void onPreExecute(){
-            target = "http://122.39.240.72/Dietrflist.php";
+            target = "http://122.39.240.72/Dietfdlist.php";
         }
 
         @Override
@@ -118,10 +132,13 @@ public class DietActivity extends AppCompatActivity {
                     String protein = object.getString("protein");
                     String fat = object.getString("fat");
 
-                    DietrfList diet_register_item = new DietrfList(foodname, foodkcal, carbo, protein, fat);
+                    DietfdList diet_list_item = new DietfdList(foodname, foodkcal);
+                    dietfdList.add(diet_list_item);
+
+                    DietrfList diet_register_item = new DietrfList(foodname, foodkcal, carbo, protein, fat, userID);
                     dietrfList.add(diet_register_item);
 
-                    rgadapter.notifyDataSetChanged();
+                    fdadapter.notifyDataSetChanged();
 
                     count++;
                 }
@@ -131,4 +148,3 @@ public class DietActivity extends AppCompatActivity {
         }
     }
 }
-

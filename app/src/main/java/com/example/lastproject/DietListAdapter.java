@@ -1,13 +1,12 @@
 package com.example.lastproject;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.Intent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
+
 
 import androidx.fragment.app.Fragment;
 
@@ -29,12 +28,16 @@ public class DietListAdapter extends BaseAdapter {
 
     private List<DietrfList> dietrfList;
 
-    public DietListAdapter(Context context, List<DietfdList> dietfdList, List<DietfdList> searchfdList, List<DietrfList> dietrfList) {
+    private Fragment parent;
+
+
+    public DietListAdapter(Context context, List<DietfdList> dietfdList, List<DietfdList> searchfdList, List<DietrfList> dietrfList, Fragment parent) {
         this.context = context;
         this.dietfdList = dietfdList;
         this.searchfdList = searchfdList;
 
         this.dietrfList = dietrfList;
+        this.parent = parent;
     }
 
     @Override
@@ -72,6 +75,8 @@ public class DietListAdapter extends BaseAdapter {
                 String protein = dietrfList.get(i).getProtein();
                 String fat = dietrfList.get(i).getFat();
 
+                String userID = DietListFragment.userID;
+
                 Response.Listener<String> responseListener = (response) ->{
                     try{
                         JSONObject jsonResponse = new JSONObject(response);
@@ -79,20 +84,15 @@ public class DietListAdapter extends BaseAdapter {
                         if(success){
                             Toast.makeText(v.getContext(), "음식 등록 성공 = " + dietrfList.get(i).getFoodname(), Toast.LENGTH_SHORT).show();
                         } else{
-                            Toast.makeText(v.getContext(), "실패", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(v.getContext(), "등록 실패", Toast.LENGTH_SHORT).show();
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
                 };
-                AddRequest addRequest = new AddRequest(fdname, fdkcal, carbo, protein, fat, responseListener);
+                AddRequest addRequest = new AddRequest(fdname, fdkcal, carbo, protein, fat, userID, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(v.getContext());
                 queue.add(addRequest);
-
-                Intent intent = new Intent( v.getContext(), DietActivity.class );
-                v.getContext().startActivity(intent);
-
-                notifyDataSetChanged();
             }
         });
 /*
